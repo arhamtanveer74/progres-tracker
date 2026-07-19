@@ -1,0 +1,529 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="GrowthOS — your personal growth operating system." />
+  <title>GrowthOS · Arham Tanveer</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+  <!-- ============================================================
+       AMBIENT BACKGROUND (floating gradients painted in Phase 2/8)
+       ============================================================ -->
+  <div class="bg-gradient" aria-hidden="true">
+    <span class="bg-blob bg-blob--1"></span>
+    <span class="bg-blob bg-blob--2"></span>
+    <span class="bg-blob bg-blob--3"></span>
+  </div>
+
+  <!-- ============================================================
+       APP SHELL
+       ============================================================ -->
+  <div class="app">
+
+    <!-- ------------------------------------------------------------
+         SIDEBAR
+         ------------------------------------------------------------ -->
+    <aside class="sidebar" id="sidebar">
+      <!-- Brand -->
+      <div class="sidebar__brand">
+        <span class="brand__mark" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M4 20V10" /><path d="M10 20V4" /><path d="M16 20v-7" /><path d="M22 20V8" />
+          </svg>
+        </span>
+        <span class="brand__name">GrowthOS</span>
+      </div>
+
+      <!-- Primary navigation -->
+      <nav class="nav" aria-label="Primary">
+        <ul class="nav__list">
+          <li>
+            <button class="nav__item is-active" data-view="dashboard" type="button">
+              <span class="nav__icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="9"/><rect x="14" y="3" width="7" height="5"/><rect x="14" y="12" width="7" height="9"/><rect x="3" y="16" width="7" height="5"/></svg>
+              </span>
+              <span class="nav__label">Dashboard</span>
+            </button>
+          </li>
+          <li>
+            <button class="nav__item" data-view="goals" type="button">
+              <span class="nav__icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="5"/><circle cx="12" cy="12" r="1"/></svg>
+              </span>
+              <span class="nav__label">Goals</span>
+            </button>
+          </li>
+          <li>
+            <button class="nav__item" data-view="calendar" type="button">
+              <span class="nav__icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg>
+              </span>
+              <span class="nav__label">Calendar</span>
+            </button>
+          </li>
+          <li>
+            <button class="nav__item" data-view="analytics" type="button">
+              <span class="nav__icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3v18h18"/><path d="M7 15l4-4 3 3 5-6"/></svg>
+              </span>
+              <span class="nav__label">Analytics</span>
+            </button>
+          </li>
+          <li>
+            <button class="nav__item" data-view="journal" type="button">
+              <span class="nav__icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h13a2 2 0 0 1 2 2v14H6a2 2 0 0 1-2-2z"/><path d="M9 4v16"/></svg>
+              </span>
+              <span class="nav__label">Journal</span>
+            </button>
+          </li>
+          <li>
+            <button class="nav__item" data-view="habits" type="button">
+              <span class="nav__icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>
+              </span>
+              <span class="nav__label">Habits</span>
+            </button>
+          </li>
+          <li>
+            <button class="nav__item" data-view="reviews" type="button">
+              <span class="nav__icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 17.3 6.2 21l1.6-6.6L3 9.7l6.7-.6L12 3l2.3 6.1 6.7.6-4.8 4.7 1.6 6.6z"/></svg>
+              </span>
+              <span class="nav__label">Reviews</span>
+            </button>
+          </li>
+          <li>
+            <button class="nav__item" data-view="achievements" type="button">
+              <span class="nav__icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M8 21h8M12 17v4M7 4h10v5a5 5 0 0 1-10 0z"/><path d="M17 5h3v2a3 3 0 0 1-3 3M7 5H4v2a3 3 0 0 0 3 3"/></svg>
+              </span>
+              <span class="nav__label">Achievements</span>
+            </button>
+          </li>
+          <li>
+            <button class="nav__item" data-view="future-me" type="button">
+              <span class="nav__icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>
+              </span>
+              <span class="nav__label">Future Me</span>
+            </button>
+          </li>
+          <li>
+            <button class="nav__item" data-view="settings" type="button">
+              <span class="nav__icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 1 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 1 1-2.83-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 1 1 2.83-2.83l.06.06A1.65 1.65 0 0 0 9 4.6a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 1 1 2.83 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg>
+              </span>
+              <span class="nav__label">Settings</span>
+            </button>
+          </li>
+        </ul>
+      </nav>
+
+      <!-- Level / XP card -->
+      <div class="level-card">
+        <div class="level-card__badge" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m12 2 3 6 6 .9-4.5 4.3L18 20l-6-3.2L6 20l1.5-6.8L3 8.9 9 8z"/></svg>
+        </div>
+        <div class="level-card__body">
+          <p class="level-card__level">Level 12</p>
+          <p class="level-card__title">Warrior</p>
+          <div class="level-card__xp">
+            <div class="level-card__xp-head">
+              <span>XP Progress</span>
+              <span class="level-card__xp-value">820 / 1200 XP</span>
+            </div>
+            <div class="progress progress--xp" role="progressbar" aria-valuenow="820" aria-valuemin="0" aria-valuemax="1200">
+              <span class="progress__fill" data-progress="68"></span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Motivational quote -->
+      <div class="quote-card">
+        <p class="quote-card__text">"Discipline today. Freedom tomorrow." <span aria-hidden="true">⚡</span></p>
+      </div>
+    </aside>
+
+    <!-- ------------------------------------------------------------
+         MAIN COLUMN
+         ------------------------------------------------------------ -->
+    <div class="main">
+
+      <!-- Top bar -->
+      <header class="topbar">
+        <button class="topbar__menu" type="button" aria-label="Toggle sidebar" data-action="toggle-sidebar">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12h18M3 6h18M3 18h18"/></svg>
+        </button>
+
+        <div class="topbar__greeting">
+          <h1 class="greeting__title">Good Morning, Arham Tanveer <span aria-hidden="true">👋</span></h1>
+          <p class="greeting__subtitle">Today is your opportunity to build the tomorrow you want.</p>
+        </div>
+
+        <div class="topbar__actions">
+          <button class="icon-btn" type="button" aria-label="Search" data-action="search">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7"/><path d="m21 21-4.3-4.3"/></svg>
+          </button>
+          <button class="icon-btn" type="button" aria-label="Toggle theme" data-action="toggle-theme">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg>
+          </button>
+          <button class="icon-btn icon-btn--badge" type="button" aria-label="Notifications" data-action="notifications">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 8a6 6 0 0 0-12 0c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.7 21a2 2 0 0 1-3.4 0"/></svg>
+            <span class="icon-btn__badge">3</span>
+          </button>
+          <button class="avatar" type="button" aria-label="Account">
+            <span class="avatar__initials">A</span>
+          </button>
+        </div>
+      </header>
+
+      <!-- =========================================================
+           VIEW: DASHBOARD  (fully built in Phase 1)
+           ========================================================= -->
+      <main class="view is-active" id="view-dashboard" data-view="dashboard">
+        <div class="dashboard-grid">
+
+          <!-- Today's Progress ----------------------------------- -->
+          <section class="card card--progress" aria-labelledby="progress-title">
+            <div class="card__head">
+              <h2 class="card__title" id="progress-title">Today's Progress</h2>
+            </div>
+            <div class="ring-wrap">
+              <svg class="ring" viewBox="0 0 200 200" role="img" aria-label="Today's completion 78 percent">
+                <defs>
+                  <linearGradient id="ringGrad" x1="0" y1="0" x2="1" y2="1">
+                    <stop offset="0" stop-color="#4f79ff" />
+                    <stop offset="0.5" stop-color="#33d9f2" />
+                    <stop offset="1" stop-color="#a35bff" />
+                  </linearGradient>
+                </defs>
+                <circle class="ring__track" cx="100" cy="100" r="86" fill="none" stroke-width="14" />
+                <circle class="ring__value" cx="100" cy="100" r="86" fill="none" stroke-width="14"
+                        data-progress="78" transform="rotate(-90 100 100)" />
+              </svg>
+              <div class="ring__center">
+                <span class="ring__percent" data-count-to="78">78%</span>
+                <span class="ring__caption">Great job! <span aria-hidden="true">🚀</span></span>
+              </div>
+            </div>
+            <p class="card__foot">Score: <strong data-count-to="78">78</strong> / 100</p>
+          </section>
+
+          <!-- Today vs Yesterday --------------------------------- -->
+          <section class="card card--compare" aria-labelledby="compare-title">
+            <div class="card__head">
+              <h2 class="card__title" id="compare-title">Today vs Yesterday</h2>
+            </div>
+            <div class="compare">
+              <div class="compare__side">
+                <span class="compare__label">Yesterday</span>
+                <span class="compare__value">65%</span>
+              </div>
+              <div class="compare__arrow" data-trend="up" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7"/><path d="M8 7h9v9"/></svg>
+              </div>
+              <div class="compare__side">
+                <span class="compare__label">Today</span>
+                <span class="compare__value">78%</span>
+              </div>
+            </div>
+            <p class="compare__delta" data-trend="up">
+              <span aria-hidden="true">↑</span> 13% Improvement
+            </p>
+            <p class="compare__message">You're doing better than yesterday!</p>
+          </section>
+
+          <!-- Streaks -------------------------------------------- -->
+          <section class="card card--streaks" aria-labelledby="streaks-title">
+            <div class="card__head">
+              <h2 class="card__title" id="streaks-title">Streaks</h2>
+              <button class="link-btn" type="button" data-action="view-streaks">View all</button>
+            </div>
+            <ul class="streak-list">
+              <li class="streak">
+                <span class="streak__icon" aria-hidden="true">🥤</span>
+                <span class="streak__name">Morning Shake</span>
+                <span class="streak__count">12 days <span aria-hidden="true">🔥</span></span>
+              </li>
+              <li class="streak">
+                <span class="streak__icon" aria-hidden="true">💻</span>
+                <span class="streak__name">Coding</span>
+                <span class="streak__count">18 days <span aria-hidden="true">🔥</span></span>
+              </li>
+              <li class="streak">
+                <span class="streak__icon" aria-hidden="true">🏋️</span>
+                <span class="streak__name">Workout</span>
+                <span class="streak__count">11 days <span aria-hidden="true">🔥</span></span>
+              </li>
+              <li class="streak">
+                <span class="streak__icon" aria-hidden="true">📖</span>
+                <span class="streak__name">Read Quran</span>
+                <span class="streak__count">16 days <span aria-hidden="true">🔥</span></span>
+              </li>
+              <li class="streak">
+                <span class="streak__icon" aria-hidden="true">💼</span>
+                <span class="streak__name">Job Applications</span>
+                <span class="streak__count">4 days <span aria-hidden="true">🔥</span></span>
+              </li>
+            </ul>
+          </section>
+
+          <!-- Today's Goals -------------------------------------- -->
+          <section class="card card--goals" aria-labelledby="goals-title">
+            <div class="card__head">
+              <h2 class="card__title" id="goals-title">Today's Goals</h2>
+              <button class="btn btn--primary" type="button" data-action="add-goal">
+                <span aria-hidden="true">＋</span> Add Goal
+              </button>
+            </div>
+
+            <ul class="goal-list">
+              <!-- Checkbox goal (completed) -->
+              <li class="goal is-complete" data-goal-type="checkbox">
+                <span class="goal__icon" aria-hidden="true">🥤</span>
+                <div class="goal__info">
+                  <p class="goal__title">Morning Shake</p>
+                  <p class="goal__subtitle">Drink your protein shake</p>
+                </div>
+                <div class="goal__meter">
+                  <span class="goal__status goal__status--done">Completed</span>
+                </div>
+                <button class="goal__check is-checked" type="button" aria-label="Mark Morning Shake incomplete"></button>
+              </li>
+
+              <!-- Water goal (ml) -->
+              <li class="goal" data-goal-type="water">
+                <span class="goal__icon" aria-hidden="true">💧</span>
+                <div class="goal__info">
+                  <p class="goal__title">Drink Water</p>
+                  <p class="goal__subtitle">Stay hydrated</p>
+                </div>
+                <div class="goal__meter">
+                  <span class="goal__amount">2200 / 3000 ml</span>
+                  <div class="progress" role="progressbar" aria-valuenow="73" aria-valuemin="0" aria-valuemax="100">
+                    <span class="progress__fill" data-progress="73"></span>
+                  </div>
+                </div>
+                <span class="goal__percent">73%</span>
+                <button class="goal__check" type="button" aria-label="Mark Drink Water complete"></button>
+              </li>
+
+              <!-- Minutes goal -->
+              <li class="goal" data-goal-type="minutes">
+                <span class="goal__icon" aria-hidden="true">💻</span>
+                <div class="goal__info">
+                  <p class="goal__title">Learn JavaScript</p>
+                  <p class="goal__subtitle">Coding practice</p>
+                </div>
+                <div class="goal__meter">
+                  <span class="goal__amount">95 / 120 min</span>
+                  <div class="progress" role="progressbar" aria-valuenow="79" aria-valuemin="0" aria-valuemax="100">
+                    <span class="progress__fill" data-progress="79"></span>
+                  </div>
+                </div>
+                <span class="goal__percent">79%</span>
+                <button class="goal__check" type="button" aria-label="Mark Learn JavaScript complete"></button>
+              </li>
+
+              <!-- Count goal -->
+              <li class="goal" data-goal-type="count">
+                <span class="goal__icon" aria-hidden="true">💼</span>
+                <div class="goal__info">
+                  <p class="goal__title">Apply to Jobs</p>
+                  <p class="goal__subtitle">Apply to at least 10 jobs</p>
+                </div>
+                <div class="goal__meter">
+                  <span class="goal__amount">3 / 10</span>
+                  <div class="progress" role="progressbar" aria-valuenow="30" aria-valuemin="0" aria-valuemax="100">
+                    <span class="progress__fill" data-progress="30"></span>
+                  </div>
+                </div>
+                <span class="goal__percent">30%</span>
+                <button class="goal__check" type="button" aria-label="Mark Apply to Jobs complete"></button>
+              </li>
+
+              <!-- Minutes goal -->
+              <li class="goal" data-goal-type="minutes">
+                <span class="goal__icon" aria-hidden="true">📖</span>
+                <div class="goal__info">
+                  <p class="goal__title">Study Islamiat</p>
+                  <p class="goal__subtitle">Study for knowledge</p>
+                </div>
+                <div class="goal__meter">
+                  <span class="goal__amount">12 / 15 min</span>
+                  <div class="progress" role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100">
+                    <span class="progress__fill" data-progress="80"></span>
+                  </div>
+                </div>
+                <span class="goal__percent">80%</span>
+                <button class="goal__check" type="button" aria-label="Mark Study Islamiat complete"></button>
+              </li>
+
+              <!-- Minutes goal (not started) -->
+              <li class="goal" data-goal-type="minutes">
+                <span class="goal__icon" aria-hidden="true">🏋️</span>
+                <div class="goal__info">
+                  <p class="goal__title">Workout</p>
+                  <p class="goal__subtitle">45 minutes workout</p>
+                </div>
+                <div class="goal__meter">
+                  <span class="goal__amount">0 / 45 min</span>
+                  <div class="progress" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100">
+                    <span class="progress__fill" data-progress="0"></span>
+                  </div>
+                </div>
+                <span class="goal__percent">0%</span>
+                <button class="goal__check" type="button" aria-label="Mark Workout complete"></button>
+              </li>
+            </ul>
+          </section>
+
+          <!-- Weekly Progress ------------------------------------ -->
+          <section class="card card--weekly" aria-labelledby="weekly-title">
+            <div class="card__head">
+              <h2 class="card__title" id="weekly-title">Weekly Progress</h2>
+              <div class="select">
+                <select aria-label="Weekly range">
+                  <option>This Week</option>
+                  <option>Last Week</option>
+                </select>
+              </div>
+            </div>
+            <!-- Bars are rendered from data in the charts phase.
+                 Static placeholders below keep the layout visible. -->
+            <div class="chart chart--bars" data-chart="weekly">
+              <div class="chart__grid" aria-hidden="true">
+                <span>100%</span><span>75%</span><span>50%</span><span>25%</span><span>0%</span>
+              </div>
+              <ul class="bars">
+                <li class="bar"><span class="bar__fill" data-progress="72"></span><span class="bar__label">Mon</span></li>
+                <li class="bar"><span class="bar__fill" data-progress="58"></span><span class="bar__label">Tue</span></li>
+                <li class="bar"><span class="bar__fill" data-progress="41"></span><span class="bar__label">Wed</span></li>
+                <li class="bar"><span class="bar__fill" data-progress="60"></span><span class="bar__label">Thu</span></li>
+                <li class="bar"><span class="bar__fill" data-progress="83"></span><span class="bar__label">Fri</span></li>
+                <li class="bar"><span class="bar__fill" data-progress="90"></span><span class="bar__label">Sat</span></li>
+                <li class="bar"><span class="bar__fill" data-progress="68"></span><span class="bar__label">Sun</span></li>
+              </ul>
+            </div>
+            <ul class="stat-row">
+              <li><span class="stat-row__label">Average</span><span class="stat-row__value">67%</span></li>
+              <li><span class="stat-row__label">Highest</span><span class="stat-row__value">90%</span></li>
+              <li><span class="stat-row__label">Lowest</span><span class="stat-row__value">41%</span></li>
+            </ul>
+          </section>
+
+          <!-- Activity Heatmap ----------------------------------- -->
+          <section class="card card--heatmap" aria-labelledby="heatmap-title">
+            <div class="card__head">
+              <h2 class="card__title" id="heatmap-title">Activity Heatmap</h2>
+              <div class="select">
+                <select aria-label="Heatmap year">
+                  <option>This Year</option>
+                  <option>Last Year</option>
+                </select>
+              </div>
+            </div>
+            <!-- Squares generated by JS in the heatmap phase. -->
+            <div class="heatmap" data-heatmap="year" aria-label="Contribution activity heatmap"></div>
+            <div class="heatmap__legend">
+              <span>Less</span>
+              <span class="heatmap__scale">
+                <i data-level="0"></i><i data-level="1"></i><i data-level="2"></i><i data-level="3"></i><i data-level="4"></i>
+              </span>
+              <span>More</span>
+            </div>
+          </section>
+
+          <!-- Life Areas ----------------------------------------- -->
+          <section class="card card--life" aria-labelledby="life-title">
+            <div class="card__head">
+              <h2 class="card__title" id="life-title">Life Areas</h2>
+              <button class="link-btn" type="button" data-action="view-life-areas">View All</button>
+            </div>
+            <p class="card__subhead">Balance is the key</p>
+            <ul class="life-grid">
+              <li class="life"><div class="mini-ring" data-progress="75" data-area="health"><span class="mini-ring__value">75%</span></div><span class="life__label">Health</span></li>
+              <li class="life"><div class="mini-ring" data-progress="65" data-area="career"><span class="mini-ring__value">65%</span></div><span class="life__label">Career</span></li>
+              <li class="life"><div class="mini-ring" data-progress="80" data-area="learning"><span class="mini-ring__value">80%</span></div><span class="life__label">Learning</span></li>
+              <li class="life"><div class="mini-ring" data-progress="70" data-area="spirituality"><span class="mini-ring__value">70%</span></div><span class="life__label">Spirituality</span></li>
+              <li class="life"><div class="mini-ring" data-progress="60" data-area="finance"><span class="mini-ring__value">60%</span></div><span class="life__label">Finance</span></li>
+              <li class="life"><div class="mini-ring" data-progress="50" data-area="relationships"><span class="mini-ring__value">50%</span></div><span class="life__label">Relationships</span></li>
+            </ul>
+          </section>
+
+          <!-- AI Insight ----------------------------------------- -->
+          <section class="card card--insight" aria-labelledby="insight-title">
+            <div class="card__head">
+              <h2 class="card__title" id="insight-title">
+                <span class="insight__spark" aria-hidden="true">✦</span> AI Insight
+              </h2>
+            </div>
+            <p class="insight__lead">You improved your score by 13% compared to yesterday <span aria-hidden="true">👏</span></p>
+            <ul class="insight__list">
+              <li>Coding consistency is increasing <span aria-hidden="true">📈</span></li>
+              <li>You missed your workout for 2 days</li>
+              <li>Morning shake streak is amazing! <span aria-hidden="true">🔥</span></li>
+            </ul>
+            <button class="btn btn--ghost" type="button" data-action="full-report">View Full Report</button>
+          </section>
+
+          <!-- Quick Journal -------------------------------------- -->
+          <section class="card card--journal" aria-labelledby="qjournal-title">
+            <div class="card__head">
+              <h2 class="card__title" id="qjournal-title">Quick Journal</h2>
+            </div>
+            <label class="journal__label" for="quick-journal">How was your day?</label>
+            <textarea class="journal__input" id="quick-journal" placeholder="Write your thoughts..."></textarea>
+            <div class="journal__foot">
+              <button class="btn btn--primary" type="button" data-action="save-journal">Save Entry</button>
+            </div>
+          </section>
+
+        </div>
+      </main>
+
+      <!-- =========================================================
+           OTHER VIEWS — skeleton containers, built in later phases
+           ========================================================= -->
+      <main class="view" id="view-goals" data-view="goals" hidden>
+        <div class="view__placeholder"><h2>Goals</h2><p>Full goals manager arrives in a later phase.</p></div>
+      </main>
+      <main class="view" id="view-calendar" data-view="calendar" hidden>
+        <div class="view__placeholder"><h2>Calendar</h2><p>Monthly calendar with color-coded days arrives in a later phase.</p></div>
+      </main>
+      <main class="view" id="view-analytics" data-view="analytics" hidden>
+        <div class="view__placeholder"><h2>Analytics</h2><p>Deep-dive charts arrive in a later phase.</p></div>
+      </main>
+      <main class="view" id="view-journal" data-view="journal" hidden>
+        <div class="view__placeholder"><h2>Journal</h2><p>Daily reflection with markdown + autosave arrives in a later phase.</p></div>
+      </main>
+      <main class="view" id="view-habits" data-view="habits" hidden>
+        <div class="view__placeholder"><h2>Habits</h2><p>Habit tracking arrives in a later phase.</p></div>
+      </main>
+      <main class="view" id="view-reviews" data-view="reviews" hidden>
+        <div class="view__placeholder"><h2>Reviews</h2><p>Weekly &amp; monthly reviews arrive in a later phase.</p></div>
+      </main>
+      <main class="view" id="view-achievements" data-view="achievements" hidden>
+        <div class="view__placeholder"><h2>Achievements</h2><p>Unlockable badges arrive in a later phase.</p></div>
+      </main>
+      <main class="view" id="view-future-me" data-view="future-me" hidden>
+        <div class="view__placeholder"><h2>Future Me</h2><p>Letters to your future self arrive in a later phase.</p></div>
+      </main>
+      <main class="view" id="view-settings" data-view="settings" hidden>
+        <div class="view__placeholder"><h2>Settings</h2><p>Theme, accent, animations, backup &amp; restore arrive in a later phase.</p></div>
+      </main>
+
+    </div><!-- /.main -->
+  </div><!-- /.app -->
+
+  <script src="script.js" defer></script>
+</body>
+</html>
